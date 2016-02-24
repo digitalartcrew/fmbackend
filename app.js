@@ -17,7 +17,7 @@ app.use(cors());
 
 
 
-app.get('/markets', function(req,res){
+app.get('/', function(req,res){
 	request('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=46224', function(error, response, body) {
 	  if (error || response.statusCode !== 200) return res.status(404).json({error: error});
 	  res.status(200).json(body);
